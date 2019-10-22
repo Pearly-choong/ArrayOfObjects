@@ -65,6 +65,7 @@ var dogs = [
 // }
 
 // ======== column styling ======
+function allDogs(){
 for (var i = 0; i < dogs.length; i++) {
   document.getElementById('dogs').innerHTML
    += '</br><h1 class="jumbotron text-danger"> ' + dogs[i].name + '</h1>'
@@ -79,7 +80,7 @@ for (var i = 0; i < dogs.length; i++) {
    + '</div>'
    + '</div>';
 }
-
+}
 
 document.getElementById('bullDog').addEventListener('click', function(){
   console.log(dogs);
@@ -153,11 +154,11 @@ document.getElementById('changeName').addEventListener('click', function(){
   console.log(oldName, newName);
   for (var i=0; i< dogs.length; i++){
     if (oldName === dogs[i].name){
-      dog[i].name = newName;
+      dogs[i].name = newName;
     }
   }
   console.log(dogs);
-  allDog();
+  allDogs();
 
 });
 
