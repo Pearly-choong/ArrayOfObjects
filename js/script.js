@@ -3,7 +3,7 @@ console.log('Array of objects');
 var dogs = [
   {
     name : 'Bobby',
-    id   : 'AA123',
+    id   : 'A101',
     breed: 'Golden Retrievers',
     color: 'Golden and White',
     height: 60,
@@ -13,7 +13,7 @@ var dogs = [
 
   {
     name : 'Chowy',
-    id   : 'AB124',
+    id   : 'A102',
     breed: 'Chow Chow',
     color: 'Brown',
     height: 100,
@@ -23,7 +23,7 @@ var dogs = [
 
   {
     name : 'Kitty',
-    id   : 'AC227',
+    id   : 'A103',
     breed: 'Cavalier King Charles Spaniel',
     color: 'Black and Brown',
     height: 45,
@@ -33,7 +33,7 @@ var dogs = [
 
   {
     name : 'Boo',
-    id   : 'AA237',
+    id   : 'A104',
     breed: 'Bulldog',
     color: 'Black and Brown',
     height: 40,
@@ -43,7 +43,7 @@ var dogs = [
 
   {
     name : 'Jojo',
-    id   : 'AC227',
+    id   : 'A105',
     breed: 'German Shepherd',
     color: 'Black and Brown',
     height: 60,
@@ -65,13 +65,16 @@ var dogs = [
 // }
 
 // ======== column styling ======
+var id = 101; //variable is used to generate id's for image
+
 function allDogs(){
+  document.getElementById('dogs').innerHTML = ''; //to clear the container
 for (var i = 0; i < dogs.length; i++) {
   document.getElementById('dogs').innerHTML
    += '</br><h1 class="jumbotron text-danger"> ' + dogs[i].name + '</h1>'
    + '<div class="row">'
    + '<div class="col">'
-   + '<img class="img-thumbnail myDogs" src=" ' + dogs[i].photo + ' " alt="Dog"/>'
+   + '<img id="A' + id.toString() + ' " class="img-thumbnail myDogs" src=" ' + dogs[i].photo + ' " alt="Dog"/>'
    + '</div>'
    + '<div class="col">'
    + '</br></br> Breed: <h5 class="text-danger" > ' + dogs[i].breed + ' </h5>'
@@ -79,6 +82,8 @@ for (var i = 0; i < dogs.length; i++) {
    + '</br> Height : <h5 class="text-danger" > ' + dogs[i].height + ' </h5>'
    + '</div>'
    + '</div>';
+   id++; // id is incremented automatically
+   console.log(id.toString());
 }
 }
 
@@ -162,7 +167,41 @@ document.getElementById('changeName').addEventListener('click', function(){
 
 });
 
-document.getElementById('all').addEventListener('click', function(){
+//document.getElementById('all').addEventListener('click', function(){
   allDogs();
 
+//});
+
+
+$('.myDogs').on('click', function(){
+  console.log('dogs');
+  console.log(typeof(this.id));// to check the data type
+  console.log(this.id);
+  document.getElementById('modalContent').innerHTML = '';
+  $('.myModal').show();
+  for (var i = 0; i < dogs.length ; i++){
+    console.log(typeof(dogs[i].id));
+    console.log(dogs[i].id);
+    console.log(i);
+    console.log(dogs[i].id === this.id);
+    // id property of dogs is checked for equivalence with the image id of the clicked element
+    if(this.id.trim() === dogs[i].id.trim()){
+      console.log(dogs[i].name);
+      console.log(dogs[i].breed);
+      console.log(dogs[i].age);
+      console.log(dogs[i].height);
+      document.getElementById('modalContent').innerHTML
+      += '<div class="display-5 jumbotron"> ' + dogs[i].name + '</br>'
+      + 'Breed: ' + dogs[i].breed + '</br>'
+      + 'Age: ' + dogs[i].age + '</br>'
+      + 'Height: ' + dogs[i].height
+      + '</div>'
+      + '<img class="card-thumbnail myDogs" src="' + dogs[i].photo + '" alt="Dog"/>'
+    }
+  }
+});
+
+
+$('.closeBar').on('click', function(){
+  $('.myModal').hide();
 });
