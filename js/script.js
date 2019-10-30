@@ -8,7 +8,9 @@ var dogs = [
     color: 'Golden and White',
     height: 60,
     age : 3,
-    photo: 'images/dog1.jpg'
+    photo: 'images/dog1.jpg',
+    photo2: 'images/dog1a.jpg',
+    photo3: 'images/dog1b.jpg'
   },
 
   {
@@ -18,7 +20,9 @@ var dogs = [
     color: 'Brown',
     height: 100,
     age : 10,
-    photo: 'images/dog2.jpg'
+    photo: 'images/dog2.jpg',
+    photo2: 'images/dog2a.jpg',
+    photo3: 'images/dog2b.jpg'
   },
 
   {
@@ -28,7 +32,9 @@ var dogs = [
     color: 'Black and Brown',
     height: 45,
     age : 4,
-    photo: 'images/dog3.jpg'
+    photo: 'images/dog3.jpg',
+    photo2: 'images/dog3a.jpg',
+    photo3: 'images/dog3b.jpg'
   },
 
   {
@@ -38,7 +44,9 @@ var dogs = [
     color: 'Black and Brown',
     height: 40,
     age : 8,
-    photo: 'images/dog4.jpg'
+    photo: 'images/dog4.jpg',
+    photo2: 'images/dog4a.jpg',
+    photo3: 'images/dog4b.jpg'
   },
 
   {
@@ -48,7 +56,9 @@ var dogs = [
     color: 'Black and Brown',
     height: 60,
     age : 3,
-    photo: 'images/dog5.jpg'
+    photo: 'images/dog5.jpg',
+    photo2: 'images/dog5a.jpg',
+    photo3: 'images/dog5b.jpg'
   }
 
 ];
@@ -186,6 +196,7 @@ $('.myDogs').on('click', function(){
     console.log(dogs[i].id === this.id);
     // id property of dogs is checked for equivalence with the image id of the clicked element
     if(this.id.trim() === dogs[i].id.trim()){
+      //remove leading and trailing space in the string while trying to match
       console.log(dogs[i].name);
       console.log(dogs[i].breed);
       console.log(dogs[i].age);
@@ -196,7 +207,25 @@ $('.myDogs').on('click', function(){
       + 'Age: ' + dogs[i].age + '</br>'
       + 'Height: ' + dogs[i].height
       + '</div>'
+      //+ '<img class="card-thumbnail myDogs" src="' + dogs[i].photo + '" alt="Dog"/>'
+      + '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">'
+      + '<ol class="carousel-indicators">'
+      + '<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>'
+      + '<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>'
+      + '<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>'
+      + '</ol>  <div class="carousel-inner"> <div class="carousel-item active">'
       + '<img class="card-thumbnail myDogs" src="' + dogs[i].photo + '" alt="Dog"/>'
+      + '</div> <div class="carousel-item">'
+      + '<img class="card-thumbnail myDogs" src="' + dogs[i].photo2 + '" alt="Dog"/>'
+      + '</div> <div class="carousel-item">'
+      + '<img class="card-thumbnail myDogs" src="' + dogs[i].photo3 + '" alt="Dog"/>'
+      + '</div> </div>'
+      + '<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">'
+      + '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'
+      + '<span class="sr-only">Previous</span> </a>'
+      + '<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">'
+      + '<span class="carousel-control-next-icon" aria-hidden="true"></span>'
+      + '<span class="sr-only">Next</span></a></div>';
     }
   }
 });
