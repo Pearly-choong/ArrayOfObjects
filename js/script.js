@@ -234,3 +234,148 @@ $('.myDogs').on('click', function(){
 $('.closeBar').on('click', function(){
   $('.myModal').hide();
 });
+
+// ================= name Decrease Z-A ================
+document.getElementById('nameDecrease').addEventListener('click', function(){
+
+//  var x = dogs.sort();
+//  console.lg(x);
+
+  dogs.sort(compare); //calling a function called compare to define the object property
+
+  function compare(a,b) {
+
+    if(a.name < b.name){
+      return 1 //returns true
+    } else if (a.name > b.name){
+      return -1; // reuturns flase
+    }
+    allDogs;
+  } // end of function compare
+
+  document.getElementById('dogs').innerHTML = ''; //to clear the container
+  for (var i = 0; i < dogs.length; i++) {
+  document.getElementById('dogs').innerHTML
+   += '</br><h1 class="jumbotron text-danger"> ' + dogs[i].name + '</h1>'
+   + '<div class="row">'
+   + '<div class="col">'
+   + '<img id="A' + id.toString() + ' " class="img-thumbnail myDogs" src=" ' + dogs[i].photo + ' " alt="Dog"/>'
+   + '</div>'
+   + '<div class="col">'
+   + '</br></br> Breed: <h5 class="text-danger" > ' + dogs[i].breed + ' </h5>'
+   + '</br> Age : <h5 class="text-danger" > ' + dogs[i].age + ' </h5>'
+   + '</br> Height : <h5 class="text-danger" > ' + dogs[i].height + ' </h5>'
+   + '</div>'
+   + '</div>';
+   id++; // id is incremented automatically
+  }
+
+});
+
+// ================= name Increase A-Z ================
+document.getElementById('nameIncrease').addEventListener('click', function(){
+
+  dogs.sort(compare);
+
+  function compare(a,b) {
+
+    if(a.name > b.name){
+      return 1 //returns true
+    } else if (a.name < b.name){
+      return -1; // reuturns flase
+    }
+    allDogs;
+  } // end of function compare
+
+  document.getElementById('dogs').innerHTML = ''; //to clear the container
+  for (var i = 0; i < dogs.length; i++) {
+  document.getElementById('dogs').innerHTML
+   += '</br><h1 class="jumbotron text-danger"> ' + dogs[i].name + '</h1>'
+   + '<div class="row">'
+   + '<div class="col">'
+   + '<img id="A' + id.toString() + ' " class="img-thumbnail myDogs" src=" ' + dogs[i].photo + ' " alt="Dog"/>'
+   + '</div>'
+   + '<div class="col">'
+   + '</br></br> Breed: <h5 class="text-danger" > ' + dogs[i].breed + ' </h5>'
+   + '</br> Age : <h5 class="text-danger" > ' + dogs[i].age + ' </h5>'
+   + '</br> Height : <h5 class="text-danger" > ' + dogs[i].height + ' </h5>'
+   + '</div>'
+   + '</div>';
+   id++; // id is incremented automatically
+  }
+
+});
+
+
+// ================= age Descrending ================
+document.getElementById('ageDecrease').addEventListener('click', function(){
+
+//  var x = dogs.sort();
+//  console.lg(x);
+
+  dogs.sort(compare); //calling a function called compare to define the object property
+
+  function compare(a,b) {
+
+    if(a.age < b.age){
+      return 1 //returns true
+    } else if (a.age > b.age){
+      return -1; // reuturns flase
+    }
+    allDogs;
+  } // end of function compare
+
+  document.getElementById('dogs').innerHTML = ''; //to clear the container
+  for (var i = 0; i < dogs.length; i++) {
+  document.getElementById('dogs').innerHTML
+   += '</br><h1 class="jumbotron text-danger"> ' + dogs[i].name + '</h1>'
+   + '<div class="row">'
+   + '<div class="col">'
+   + '<img id="A' + id.toString() + ' " class="img-thumbnail myDogs" src=" ' + dogs[i].photo + ' " alt="Dog"/>'
+   + '</div>'
+   + '<div class="col">'
+   + '</br></br> Breed: <h5 class="text-danger" > ' + dogs[i].breed + ' </h5>'
+   + '</br> Age : <h5 class="text-danger" > ' + dogs[i].age + ' </h5>'
+   + '</br> Height : <h5 class="text-danger" > ' + dogs[i].height + ' </h5>'
+   + '</div>'
+   + '</div>';
+   id++; // id is incremented automatically
+  }
+
+});
+
+
+
+// ================= age Ascrending ================
+document.getElementById('ageIncrease').addEventListener('click', function(){
+
+  dogs.sort(compare);
+
+  function compare(a,b) {
+
+    if(a.age > b.age){
+      return 1 //returns true
+    } else if (a.age < b.age){
+      return -1; // reuturns flase
+    }
+    allDogs;
+  } // end of function compare
+
+  document.getElementById('dogs').innerHTML = ''; //to clear the container
+  for (var i = 0; i < dogs.length; i++) {
+  document.getElementById('dogs').innerHTML
+   += '</br><h1 class="jumbotron text-danger"> ' + dogs[i].name + '</h1>'
+   + '<div class="row">'
+   + '<div class="col">'
+   + '<img id="A' + id.toString() + ' " class="img-thumbnail myDogs" src=" ' + dogs[i].photo + ' " alt="Dog"/>'
+   + '</div>'
+   + '<div class="col">'
+   + '</br></br> Breed: <h5 class="text-danger" > ' + dogs[i].breed + ' </h5>'
+   + '</br> Age : <h5 class="text-danger" > ' + dogs[i].age + ' </h5>'
+   + '</br> Height : <h5 class="text-danger" > ' + dogs[i].height + ' </h5>'
+   + '</div>'
+   + '</div>';
+   id++; // id is incremented automatically
+  }
+
+});
